@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_kuliner/screens/login_screen.dart';
 import 'package:wisata_kuliner/services/auth_service.dart';
 import 'package:wisata_kuliner/services/user_service.dart';
 
@@ -29,6 +30,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         emailController.text,
         nameController.text,
         role,
+      );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
       );
     } catch (e) {
       setState(() {
@@ -125,7 +130,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Sudah punya akun?'),
-                TextButton(onPressed: () {}, child: Text('Masuk')),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
+                  child: Text('Masuk'),
+                ),
               ],
             ),
           ],
