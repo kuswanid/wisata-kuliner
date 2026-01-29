@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wisata_kuliner/screens/login_screen.dart';
 import 'package:wisata_kuliner/services/auth_service.dart';
 import 'package:wisata_kuliner/services/user_service.dart';
+import 'package:wisata_kuliner/screens/about_us_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -24,34 +25,57 @@ class AppDrawer extends StatelessWidget {
                     return Row(
                       children: [
                         CircleAvatar(child: Text(user.name[0])),
-                        SizedBox(width: 16),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              user.name,
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(user.email, style: TextStyle(fontSize: 12)),
-                          ],
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                user.name,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              Text(
+                                user.email,
+                                style: const TextStyle(fontSize: 12),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     );
                   }
-                  ;
-                  return SizedBox();
+                  return const SizedBox();
                 },
               ),
             ),
+            const Divider(),
+            // Menu navigasi ke About Us
             ListTile(
-              leading: Icon(Icons.logout_outlined),
-              title: Text('Keluar'),
+              leading: const Icon(Icons.info_outline),
+              title: const Text('About Us'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AboutUsScreen()),
+                );
+              },
+            ),
+            // Menu Keluar
+            ListTile(
+              leading: const Icon(Icons.logout_outlined),
+              title: const Text('Keluar'),
               onTap: () async {
                 await AuthService().logoutUser();
 
+                if (!context.mounted) return;
+
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
             ),
