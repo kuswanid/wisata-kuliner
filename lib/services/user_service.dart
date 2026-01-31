@@ -37,4 +37,26 @@ class UserService {
       throw e.toString();
     }
   }
+
+  Future<void> updateUserProfile({
+    required String uid,
+    required String name,
+    required String city,
+    String? photoUrl,
+    String? backgroundUrl,
+  }) async {
+    try {
+      final Map<String, dynamic> data = {
+        'name': name,
+        'city': city,
+      };
+      // Only add to map if not null
+      if (photoUrl != null) data['photoUrl'] = photoUrl;
+      if (backgroundUrl != null) data['backgroundUrl'] = backgroundUrl;
+
+      await FirebaseFirestore.instance.collection('users').doc(uid).update(data);
+    } catch (e) {
+      throw e.toString();
+    }
+  }
 }
