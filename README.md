@@ -13,7 +13,7 @@
     <td>2. Rian Setiawan</td>
     <td>3. Abdulah Zainul A</td>
     <td>4. Ismi I Arfah</td>
-    <td>1. Devi Githa Rahma A</td>
+    <td>5. Devi Githa Rahma A</td>
   </tr>
   <tr>
     <td><b>UAS</b></td>
