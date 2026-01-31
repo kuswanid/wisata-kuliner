@@ -1,3 +1,26 @@
+<table>
+  <tr>
+    <td><b>No Kelompok</b></td>
+    <td>Kelompok 1</td>
+  </tr>
+  <tr>
+    <td><b>Nama Project</b></td>
+    <td>Wisata Kuliner</td>
+  </tr>
+  <tr>
+    <td><b>Team ini terdiri dari 5</b></td>
+    <td>1. Tatang</td>
+    <td>2. Rian Setiawan</td>
+    <td>3. Abdulah Zainul A</td>
+    <td>4. Ismi I Arfah</td>
+    <td>1. Devi Githa Rahma A</td>
+  </tr>
+  <tr>
+    <td><b>UAS</b></td>
+    <td>Pemograman Mobile2</td>
+  </tr>
+</table>
+
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/635fedb7-7aae-4995-bef7-211999a299f6" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4832fba0-4341-4470-8f26-12d7acb42a43" />
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ff3ae2ea-d751-4922-b50e-42a19673d9b8" />
